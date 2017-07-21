@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet {
 		    String n=request.getParameter("UserId");  
 		    String p=request.getParameter("Password");  
 		          
-		    if(LoginDAO.validate(n, p)){  
+		    if(LoginDAO.validate(n, p) && LoginDAO.role(n)){  
 		        RequestDispatcher rd=request.getRequestDispatcher("/UserServlet");  
 		        rd.forward(request,response);  
 		    }  

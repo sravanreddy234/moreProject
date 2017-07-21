@@ -27,5 +27,30 @@ public class LoginDAO {
 			}  
 		return status;  
 		}  
+	
+	public static boolean role(String UserId) {
+		boolean status=false; 
+		try {
+		 Connection con=DataBase.getConnection();    
+			PreparedStatement ps=con.prepareStatement(  
+			"select role from userdetails where userid=?");  
+			ps.setString(1,UserId);
+			ResultSet rs=ps.executeQuery();  
+			status=rs.next();
+			System.out.println(status);
+			System.out.println(rs.getString("role"));
+			while(status){
+				
+			}
+			
+		
+		}catch(Exception e){
+			System.out.println(e);
+			} 
+		return status;
+		
+		
+	}
+	
 
 }
