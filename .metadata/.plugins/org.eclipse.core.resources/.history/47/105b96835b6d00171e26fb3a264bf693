@@ -1,0 +1,62 @@
+package com.moreProject.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.moreProject.bean.UserDetails;
+import com.moreProject.db.DataBase;
+
+
+
+public class UserServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		response.setContentType("text/html");
+		PrintWriter pw = response.getWriter();
+		
+		String id = request.getParameter("UserId");
+		String name = request.getParameter("UserName");
+		String password = request.getParameter("Password");
+		String email = request.getParameter("Email");
+		String contact = request.getParameter("Contact");
+		String role = request.getParameter("role");
+		
+		/*UserDetails ud = new UserDetails();
+		
+		ud.setUserId(id);
+		ud.setUserName(name);
+		ud.setPassword(password);
+		ud.setEmail(email);
+		ud.setContact(contact);
+		ud.setRole(role);*/
+		
+		
+		
+		
+		pw.println(id);
+		pw.println(name);
+		pw.println(password);
+		pw.println(email);
+		pw.println(contact);
+		pw.println(role);
+		
+		
+		
+		
+		
+	
+	}
+
+}
