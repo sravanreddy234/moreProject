@@ -1,0 +1,7 @@
+127.0.0.1 - - [23/Jul/2017:11:41:34 +0530] "GET / HTTP/1.1" 404 998
+0:0:0:0:0:0:0:1 - - [23/Jul/2017:11:41:38 +0530] "GET /moreProject/ HTTP/1.1" 200 1820
+0:0:0:0:0:0:0:1 - - [23/Jul/2017:11:41:39 +0530] "GET /moreProject/css/navbar.css HTTP/1.1" 200 2006
+0:0:0:0:0:0:0:1 - - [23/Jul/2017:11:41:39 +0530] "GET /moreProject/pics/more2.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Jul/2017:11:43:31 +0530] "GET /moreProject/ HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Jul/2017:11:43:37 +0530] "GET /moreProject/css/navbar.css HTTP/1.1" 200 2080
+0:0:0:0:0:0:0:1 - - [23/Jul/2017:11:43:37 +0530] "GET /moreProject/pics/more2.png HTTP/1.1" 304 -
