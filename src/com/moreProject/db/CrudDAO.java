@@ -34,18 +34,17 @@ public class CrudDAO {
           
         return status;  
     }  
-    /*public static int update(Emp e){  
+    public static int update(Product pd){  
         int status=0;  
         try{  
-            Connection con=EmpDao.getConnection();  
+            Connection con=DataBase.getConnection();  
             PreparedStatement ps=con.prepareStatement(  
-                         "update user905 set name=?,password=?,email=?,country=? where id=?");  
-            ps.setString(1,e.getName());  
-            ps.setString(2,e.getPassword());  
-            ps.setString(3,e.getEmail());  
-            ps.setString(4,e.getCountry());  
-            ps.setInt(5,e.getId());  
-              
+                         "update product set productname=?,productdesc=?,price=?,imageurl=? where id=?");  
+            ps.setString(1, pd.getProductName()); 
+            ps.setString(2, pd.getProductDesc());
+            ps.setString(3, pd.getPrice());
+            ps.setBlob(4, pd.getImageUrl());
+             ps.setString(5, pd.getProductId()); 
             status=ps.executeUpdate();  
               
             con.close();  
@@ -54,7 +53,7 @@ public class CrudDAO {
         return status;  
     }  
 	
-	 public static int delete(String UserId){  
+	 /*public static int delete(String UserId){  
 	        int status=0;  
 	        try{  
 	            Connection con=DataBase.getConnection();  
@@ -83,7 +82,6 @@ public class CrudDAO {
 				pd.setProductDesc(rs.getString(3));
 				pd.setPrice(rs.getString(4));
 				pd.setImageUrl(rs.getBinaryStream(5));
-
 				
 			}
 			con.close();
