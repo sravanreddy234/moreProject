@@ -1,5 +1,7 @@
 package com.moreProject.bean;
 
+import java.awt.Image;
+
 import com.moreProject.FileUtil.FileUtil;
 
 public class Product {
@@ -8,8 +10,8 @@ public class Product {
 	private String ProductName;
 	private String ProductDesc;
 	private String Price;
-	private int quantity;
-	private FileUtil imageUrl; 
+	//private int quantity;
+	private Image imageUrl;
 
 	public String getProductId() {
 		return ProductId;
@@ -43,22 +45,20 @@ public class Product {
 		Price = price;
 	}
 
-	public int getQuantity() {
+	/*public int getQuantity() {
 		return quantity;
 	}
 
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
-	}
+	}*/
 
-	public FileUtil getImageUrl() {
+	public Image getImageUrl() {
 		return imageUrl;
 	}
 
-	public void setImageUrl(FileUtil imageUrl) {
+	public void setImageUrl(Image imageUrl) {
 		this.imageUrl = imageUrl;
 	}
-
-	
 
 }
