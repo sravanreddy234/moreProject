@@ -3,9 +3,9 @@ package com.moreProject.servlets;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,9 +16,10 @@ import com.moreProject.bean.Product;
 import com.moreProject.db.CrudDAO;
 
 @WebServlet("/AddServlet")
+@MultipartConfig(maxFileSize = 16177215)
 public class AddServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	InputStream inputStream = null;
+	//public static InputStream inputStream = null;
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
 
@@ -28,10 +29,10 @@ public class AddServlet extends HttpServlet {
 		String id = request.getParameter("ProductId");
 		String name = request.getParameter("ProductName");
 		String desc = request.getParameter("ProductDesc");
-		String price = request.getParameter("price");
+		String price = request.getParameter("Price");
 
 		 // input stream of the upload file
-
+		InputStream inputStream = null;
 		// obtains the upload file part in this multipart request
 		Part filePart = request.getPart("imageUrl");
 		if (filePart != null) {
@@ -50,6 +51,11 @@ public class AddServlet extends HttpServlet {
 		pw.println(name);
 
 		Product pd = new Product();
+		pd.setProductId(id);
+		pd.setProductName(name);
+		pd.setProductDesc(desc);
+		pd.setPrice(price);
+		pd.setImageUrl(inputStream);
 
 		int status = 0;
 		status = CrudDAO.save(pd);

@@ -1,8 +1,6 @@
 package com.moreProject.bean;
 
-import java.awt.Image;
-
-import com.moreProject.FileUtil.FileUtil;
+import java.io.InputStream;
 
 public class Product {
 
@@ -11,7 +9,8 @@ public class Product {
 	private String ProductDesc;
 	private String Price;
 	//private int quantity;
-	private Image imageUrl;
+	//private Image imageUrl;
+	private InputStream imageUrl;
 
 	public String getProductId() {
 		return ProductId;
@@ -45,6 +44,14 @@ public class Product {
 		Price = price;
 	}
 
+	public InputStream getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(InputStream imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
 	/*public int getQuantity() {
 		return quantity;
 	}
@@ -53,12 +60,14 @@ public class Product {
 		this.quantity = quantity;
 	}*/
 
-	public Image getImageUrl() {
+	/*public Image getImageUrl() {
 		return imageUrl;
 	}
 
 	public void setImageUrl(Image imageUrl) {
 		this.imageUrl = imageUrl;
-	}
+	}*/
+	
+	
 
 }
