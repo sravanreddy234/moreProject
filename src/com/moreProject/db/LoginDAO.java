@@ -4,14 +4,40 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class LoginDAO {
+	static Connection con = DataBase.getConnection();
+	
+	public static String userName(String UserId)  {
+		PreparedStatement ps;
+		try {
+			ps = con.prepareStatement("select * from userdetails where userid=?");
+		
+		    ps.setString(1, UserId);
+		    ResultSet rs = ps.executeQuery();
+		    	while (rs.next()) {
+				
+				String s = rs.getString("username");
+				System.out.println("Welcome " + s);
+				
+				return s;
+			}
+		    
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		return null;
+		
+	}
 
 	public static boolean validate(String UserId, String Password) {
 		//boolean status = false;
 		try {
 
-			Connection con = DataBase.getConnection();
+			
 			PreparedStatement ps = con.prepareStatement("select * from userdetails where userid=? and password=?");
 			ps.setString(1, UserId);
 			ps.setString(2, Password);
@@ -25,6 +51,7 @@ public class LoginDAO {
 				
 				String s = rs.getString("username");
 				System.out.println("Welcome " + s);
+				
 				return true;
 			}
 
@@ -39,7 +66,7 @@ public class LoginDAO {
 		boolean status = false;
 		// String s1 = "";
 		try {
-			Connection con = DataBase.getConnection();
+			//Connection con = DataBase.getConnection();
 			PreparedStatement ps = con.prepareStatement("select * from userdetails where userid=?");
 			ps.setString(1, UserId);
 			ResultSet rs = ps.executeQuery();

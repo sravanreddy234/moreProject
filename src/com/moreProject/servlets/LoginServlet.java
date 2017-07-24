@@ -36,6 +36,8 @@ public class LoginServlet extends HttpServlet {
 				rd.forward(request, response);
 				System.out.println("admin logged in");
 				out.println("admin logged in: "+n);
+				out.println("<alert>welcome : "+LoginDAO.userName(n)+"</alert>");
+				System.out.println("Welcome:"+LoginDAO.userName(n));
 			} else {
 				RequestDispatcher rd = request.getRequestDispatcher("ViewProducts.html");
 				rd.include(request, response);

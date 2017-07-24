@@ -65,7 +65,7 @@ public class AddServlet extends HttpServlet {
 		 * pw.println("Sorry! unable to save record"); }
 		 */
 		//response.sendRedirect("hello.html");
-		pw.close();
+		//pw.close();
 	}
 
 }

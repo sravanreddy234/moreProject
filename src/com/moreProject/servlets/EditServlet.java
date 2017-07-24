@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,7 @@ import com.moreProject.bean.Product;
 import com.moreProject.db.CrudDAO;
 
 @WebServlet("/EditServlet")
+@MultipartConfig(maxFileSize = 16177215)
 public class EditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -28,7 +30,7 @@ public class EditServlet extends HttpServlet {
 	          
 	       
 	          
-	        out.print("<form action='EditServlet2' method='post'>");  
+	        out.print("<form action='UpdateServlet' method='post' enctype='multipart/form-data'>");  
 	        out.print("<table>");  
 	        out.print("<tr><td>ProductId</td><td><input type='hidden' name='ProductId' value='"+pd.getProductId()+"'/></td></tr>");  
 	        out.print("<tr><td>ProductName:</td><td><input type='text' name='ProductName' value='"+pd.getProductName()+"'/></td></tr>");  
