@@ -1,0 +1,38 @@
+package com.moreProject.db;
+
+import java.beans.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Savepoint;
+import java.util.Scanner;
+
+public class DataBase {
+	
+		
+		/*public static Connection getConnection(){
+			
+			Connection con=null;
+			
+			//Class.forName("oracle.jdbc.driver.OracleDriver");
+			Class.forName("org.h2.Driver");
+			try {
+				//con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","sravan","sravan");
+				con=DriverManager.getConnection("jdbc:h2:tcp://localhost/~/prjct","sa","");
+				return con;
+				
+			
+	}*/
+	
+	public static Connection getConnection(){  
+        Connection con=null;  
+        try{  
+            Class.forName("org.h2.Driver");  
+            con=DriverManager.getConnection("jdbc:h2:tcp://localhost/~/prjct","sa","");  
+        }catch(Exception e){System.out.println(e);}  
+        return con;  
+    }  
+	
+
+}
