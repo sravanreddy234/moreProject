@@ -30,18 +30,26 @@ public class LoginServlet extends HttpServlet {
 		String p = request.getParameter("Password");
 
 		if (LoginDAO.validate(n, p)) {
-				if(LoginDAO.role(n)) {
-			RequestDispatcher rd = request.getRequestDispatcher("Admin.html");
-			rd.forward(request, response);
-				}
-				else {
-					RequestDispatcher rd = request.getRequestDispatcher("Home.html");
-					rd.include(request, response);
-				}
-		} else  {
+			System.out.println("valid user");
+			if (LoginDAO.role(n)) {
+				RequestDispatcher rd = request.getRequestDispatcher("Admin.html");
+				rd.forward(request, response);
+				System.out.println("admin logged in");
+				out.println("admin logged in: "+n);
+			} else {
+				RequestDispatcher rd = request.getRequestDispatcher("ViewProducts.html");
+				rd.include(request, response);
+				System.out.println("Employee logged in");
+				out.println("Employee logged in: "+n);
+
+			}
+		} else {
 			out.println("Invalid Credentials");
 			RequestDispatcher rd = request.getRequestDispatcher("Home.html");
 			rd.include(request, response);
+			System.out.println("Invalid Credentials");
+			out.println("Invalid Credentials");
+
 		}
 
 		out.close();

@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 public class LoginDAO {
 
 	public static boolean validate(String UserId, String Password) {
-		boolean status = false;
+		//boolean status = false;
 		try {
 
 			Connection con = DataBase.getConnection();
@@ -20,22 +20,23 @@ public class LoginDAO {
 
 			System.out.println("Welcome  " + UserId);
 
-			status = rs.next();
+			//status = rs.next();
 			while (rs.next()) {
-
+				
 				String s = rs.getString("username");
 				System.out.println("Welcome " + s);
+				return true;
 			}
 
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		return status;
+		return false;
 		//return true;
 	}
 
 	public static boolean role(String UserId) {
-		boolean status = true;
+		boolean status = false;
 		// String s1 = "";
 		try {
 			Connection con = DataBase.getConnection();
@@ -47,9 +48,11 @@ public class LoginDAO {
 				String s2 = rs.getString("role");
 				System.out.println("role is : " + s2);
 				if (s2.equals("admin")) {
+					status=true;
 					return status;
 				}
 			}
+			//return status;
 
 		} catch (Exception e) {
 			System.out.println(e);
