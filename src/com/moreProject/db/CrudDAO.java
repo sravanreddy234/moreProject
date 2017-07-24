@@ -15,7 +15,7 @@ public class CrudDAO {
         try{  
              
             PreparedStatement ps=con.prepareStatement(  
-                         "insert into product(productid,productname,productdesc,price,imageurl) values (?,?,?,?,?)");  
+                         "insert into product(productid,productname,productdesc,price) values (?,?,?,?)");  
             ps.setString(1,pd.getProductId());  
             ps.setString(2,pd.getProductName());  
             ps.setString(3,pd.getProductDesc());  
@@ -25,10 +25,10 @@ public class CrudDAO {
                 // fetches input stream of the upload file for the blob column
                 ps.setBlob(5, AddServlet.inputStream);
             }*/
-             ps.setBlob(5, pd.getImageUrl()); 
+             //ps.setBlob(5, pd.getImageUrl()); 
             status=ps.executeUpdate();  
               
-            con.close();  
+            //con.close();  
         }catch(Exception ex){ex.printStackTrace();}  
           
         return status;  
@@ -36,17 +36,19 @@ public class CrudDAO {
     public static int update(Product pd){  
         int status=0;  
         try{  
-              
+              System.out.println("in update method");
             PreparedStatement ps=con.prepareStatement(  
-                         "update product set productname=?,productdesc=?,price=?,imageurl=? where id=?");  
+                         "update product set productname=?,productdesc=?,price=? where productid=?");  
             ps.setString(1, pd.getProductName()); 
             ps.setString(2, pd.getProductDesc());
             ps.setString(3, pd.getPrice());
-            ps.setBlob(4, pd.getImageUrl());
-             ps.setString(5, pd.getProductId()); 
-            status=ps.executeUpdate();  
-              
-            con.close();  
+            //ps.setBlob(4, pd.getImageUrl());
+             ps.setString(4, pd.getProductId()); 
+            status=ps.executeUpdate(); 
+            
+            System.out.println(status);
+             con.commit(); 
+            //con.close();  
         }catch(Exception ex){ex.printStackTrace();}  
           
         return status;  
@@ -55,12 +57,14 @@ public class CrudDAO {
 	 public static int delete(String ProductId){  
 	        int status=0;  
 	        try{  
+	        	System.out.println("in delete product method");
 	            Connection con=DataBase.getConnection();  
 	            PreparedStatement ps=con.prepareStatement("delete from product where productid=?");  
 	            ps.setString(1,ProductId);  
 	            status=ps.executeUpdate();  
-	              
-	            con.close();  
+	             con.commit();
+	             System.out.println(status);
+	            //con.close();  
 	        }catch(Exception e){e.printStackTrace();}  
 	          
 	        return status;  
@@ -83,7 +87,7 @@ public class CrudDAO {
                 list.add(pd);
                 System.out.println("in list");
             }  
-            con.close();  
+            //con.close();  
         }catch(Exception e){e.printStackTrace();}  
           
         return list;  
@@ -103,10 +107,10 @@ public class CrudDAO {
 				pd.setProductName(rs.getString(2));
 				pd.setProductDesc(rs.getString(3));
 				pd.setPrice(rs.getString(4));
-				pd.setImageUrl(rs.getBinaryStream(5));
+				//pd.setImageUrl(rs.getBinaryStream(5));
 				
 			}
-			con.close();
+			//con.close();
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}

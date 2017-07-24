@@ -19,7 +19,8 @@ import com.moreProject.db.CrudDAO;
 @MultipartConfig(maxFileSize = 16177215)
 public class AddServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	//public static InputStream inputStream = null;
+
+	// public static InputStream inputStream = null;
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
 
@@ -31,31 +32,26 @@ public class AddServlet extends HttpServlet {
 		String desc = request.getParameter("ProductDesc");
 		String price = request.getParameter("Price");
 
-		 // input stream of the upload file
-		InputStream inputStream = null;
-		// obtains the upload file part in this multipart request
-		Part filePart = request.getPart("imageUrl");
-		if (filePart != null) {
-			// prints out some information for debugging
-			System.out.println(filePart.getName());
-			System.out.println(filePart.getSize());
-			System.out.println(filePart.getContentType());
-
-			// obtains input stream of the upload file
-			inputStream = filePart.getInputStream();
-		}
+		/*
+		 * // input stream of the upload file InputStream inputStream = null; // obtains
+		 * the upload file part in this multipart request Part filePart =
+		 * request.getPart("imageUrl"); if (filePart != null) { // prints out some
+		 * information for debugging System.out.println(filePart.getName());
+		 * System.out.println(filePart.getSize());
+		 * System.out.println(filePart.getContentType());
+		 * 
+		 * // obtains input stream of the upload file inputStream =
+		 * filePart.getInputStream(); }
+		 */
 
 		System.out.println("in add product servlet");
-
-		pw.println(id);
-		pw.println(name);
 
 		Product pd = new Product();
 		pd.setProductId(id);
 		pd.setProductName(name);
 		pd.setProductDesc(desc);
 		pd.setPrice(price);
-		pd.setImageUrl(inputStream);
+		// pd.setImageUrl(inputStream);
 
 		int status = 0;
 		status = CrudDAO.save(pd);
@@ -64,8 +60,8 @@ public class AddServlet extends HttpServlet {
 		 * request.getRequestDispatcher("index.html").include(request, response); }else{
 		 * pw.println("Sorry! unable to save record"); }
 		 */
-		//response.sendRedirect("hello.html");
-		//pw.close();
+		// response.sendRedirect("hello.html");
+		// pw.close();
 	}
 
 }

@@ -13,9 +13,9 @@ import com.moreProject.db.CrudDAO;
 public class DeleteServlet extends HttpServlet {  
     protected void doGet(HttpServletRequest request, HttpServletResponse response)   
              throws ServletException, IOException {  
-        String uid=request.getParameter("userid");  
+        String pid=request.getParameter("ProductId");  
         //int id=Integer.parseInt(sid);  
-       // CrudDAO.delete(ProductId); 
+       CrudDAO.delete(pid); 
         response.sendRedirect("ViewServlet");  
     }  
 }  

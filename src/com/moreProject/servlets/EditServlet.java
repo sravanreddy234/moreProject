@@ -18,7 +18,7 @@ import com.moreProject.db.CrudDAO;
 public class EditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		 response.setContentType("text/html");  
@@ -30,13 +30,13 @@ public class EditServlet extends HttpServlet {
 	          
 	       
 	          
-	        out.print("<form action='UpdateServlet' method='post' enctype='multipart/form-data'>");  
+	        out.print("<form action='UpdateServlet' method='post' enctype='text/html'>");  
 	        out.print("<table>");  
 	        out.print("<tr><td>ProductId</td><td><input type='hidden' name='ProductId' value='"+pd.getProductId()+"'/></td></tr>");  
 	        out.print("<tr><td>ProductName:</td><td><input type='text' name='ProductName' value='"+pd.getProductName()+"'/></td></tr>");  
 	        out.print("<tr><td>ProductDesc:</td><td><input type='text' name='ProductDesc' value='"+pd.getProductDesc()+"'/></td></tr>");   
 	        out.print("<tr><td>Price:</td><td><input type='text' name='Price' value='"+pd.getPrice()+"'/></td></tr>");  
-	        out.print("<tr><td>ImageUrl:</td><td><input type='file' name='ImageUrl' value='"+pd.getImageUrl()+"'/></td></tr>");
+	       /* out.print("<tr><td>ImageUrl:</td><td><input type='file' name='ImageUrl' value='"+pd.getImageUrl()+"'/></td></tr>");*/
 	        out.print("</td></tr>");  
 	        out.print("<tr><td colspan='2'><input type='submit' value='Edit & Save '/></td></tr>");  
 	        out.print("</table>");  

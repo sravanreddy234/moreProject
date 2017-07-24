@@ -31,7 +31,7 @@ public class UpdateServlet extends HttpServlet {
 	        String desc=request.getParameter("ProductDesc");  
 	        String price=request.getParameter("Price");  
 	       
-	        InputStream inputStream = null;
+	        /*InputStream inputStream = null;
 			// obtains the upload file part in this multipart request
 			Part filePart = request.getPart("imageUrl");
 			if (filePart != null) {
@@ -42,9 +42,9 @@ public class UpdateServlet extends HttpServlet {
 
 				// obtains input stream of the upload file
 				inputStream = filePart.getInputStream();
-			}
+			}*/
 	          
-			System.out.println("in add product servlet");
+			System.out.println("in update product servlet");
 
 			
 
@@ -53,10 +53,13 @@ public class UpdateServlet extends HttpServlet {
 			pd.setProductName(name);
 			pd.setProductDesc(desc);
 			pd.setPrice(price);
-			pd.setImageUrl(inputStream);
+			//pd.setImageUrl(inputStream);
 
-			int status = 0;
-			status = CrudDAO.update(pd);
+			//int status = 0;
+			int status = CrudDAO.update(pd);
+			
+			System.out.println(status);
+			
 			/*
 			 * if(status>0){ pw.print("<p>Record saved successfully!</p>");
 			 * request.getRequestDispatcher("index.html").include(request, response); }else{
