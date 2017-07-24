@@ -59,6 +59,11 @@ public class UpdateServlet extends HttpServlet {
 			int status = CrudDAO.update(pd);
 			
 			System.out.println(status);
+			 if(status>0){  
+		            response.sendRedirect("ViewServlet");  
+		        }else{  
+		            out.println("Sorry! unable to update record");  
+		        }  
 			
 			/*
 			 * if(status>0){ pw.print("<p>Record saved successfully!</p>");

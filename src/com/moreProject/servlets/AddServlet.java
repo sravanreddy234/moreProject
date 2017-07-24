@@ -62,6 +62,7 @@ public class AddServlet extends HttpServlet {
 		 */
 		// response.sendRedirect("hello.html");
 		// pw.close();
+		response.sendRedirect("ViewServlet");
 	}
 
 }
