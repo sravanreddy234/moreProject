@@ -2,6 +2,9 @@ package com.moreProject.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.moreProject.db.DataBase;
 import com.moreProject.db.LoginDAO;
 
 @WebServlet("/LoginServlet")
@@ -26,9 +30,15 @@ public class LoginServlet extends HttpServlet {
 		String p = request.getParameter("Password");
 
 		if (LoginDAO.validate(n, p)) {
-			RequestDispatcher rd = request.getRequestDispatcher("/UserServlet");
+				if(LoginDAO.role(n)) {
+			RequestDispatcher rd = request.getRequestDispatcher("Admin.html");
 			rd.forward(request, response);
-		} else {
+				}
+				else {
+					RequestDispatcher rd = request.getRequestDispatcher("Home.html");
+					rd.include(request, response);
+				}
+		} else  {
 			out.println("Invalid Credentials");
 			RequestDispatcher rd = request.getRequestDispatcher("Home.html");
 			rd.include(request, response);

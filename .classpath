@@ -8,17 +8,17 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="D:/jar files/h2-1.4.196.jar">
+	<classpathentry kind="lib" path="D:/Apache Software Foundation/Tomcat 9.0/lib/servlet-api.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/jar files/ojdbc6_g.jar">
+	<classpathentry kind="lib" path="G:/jar files/required/ojdbc7.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/jar files/servlet-api.jar">
+	<classpathentry kind="lib" path="C:/Program Files (x86)/H2/bin/h2-1.4.192.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>

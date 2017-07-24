@@ -29,7 +29,7 @@ public class CrudOperations {
 		return 0;
 	}
 
-	public static int update(UserDetails ud) {
+	/*public static int update(UserDetails ud) {
 		int status = 0;
 		try {
 			Connection con = DataBase.getConnection();
@@ -52,7 +52,7 @@ public class CrudOperations {
 
 		return status;
 	}
-
+*/
 	public static UserDetails getEmployeeById(String UserId) {
 		UserDetails ud = new UserDetails();
 

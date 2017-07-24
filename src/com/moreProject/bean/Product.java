@@ -1,11 +1,16 @@
 package com.moreProject.bean;
 
+import java.io.InputStream;
+
 public class Product {
 
 	private String ProductId;
 	private String ProductName;
 	private String ProductDesc;
-	private String Amount;
+	private String Price;
+	//private int quantity;
+	//private Image imageUrl;
+	private InputStream imageUrl;
 
 	public String getProductId() {
 		return ProductId;
@@ -31,12 +36,38 @@ public class Product {
 		ProductDesc = productDesc;
 	}
 
-	public String getAmount() {
-		return Amount;
+	public String getPrice() {
+		return Price;
 	}
 
-	public void setAmount(String amount) {
-		Amount = amount;
+	public void setPrice(String price) {
+		Price = price;
 	}
+
+	public InputStream getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(InputStream imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+	/*public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}*/
+
+	/*public Image getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(Image imageUrl) {
+		this.imageUrl = imageUrl;
+	}*/
+	
+	
 
 }
