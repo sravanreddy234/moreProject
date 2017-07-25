@@ -1,26 +1,3 @@
-<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>MoreStore|SignUp</title>
-<link rel="stylesheet" href="css/form.css">
-</head>
-<body>
-
-	<form action="SignUpServlet" method="post">
-
-		<input type="text" name="UserId" placeholder="Enter UserId" /><br> UserName:<input
-			type="text" name="UserName" placeholder="Enter UserName"/><br> Password:<input
-			type="password" name="Password" placeholder="Enter Password"><br> Email:<input
-			type="email" name="Email"placeholder="Enter EmailId"><br> Contact:<input
-			type="text" name="Contact" placeholder="Enter Contact"><br> role:<input type="text"
-			name="role"> <input type="submit" value="Submit">
-	</form>
-</body>
-</html> --%>
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
@@ -89,7 +66,7 @@ span.psw {
     }
 }
 </style>
-<body>
+<body background="pics/nature1.jpg">
 
 <h2>Registration Form</h2>
 

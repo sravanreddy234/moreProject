@@ -14,7 +14,7 @@
 
 
 </head>
-<body style="height:1500px">
+<body style="height:1500px" background="pics/nature1.jpg">
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
@@ -37,7 +37,10 @@
     <a href="SignUp.jsp" style="float:right"><button class="btn btn-danger navbar-btn">SignUp</button></a>
     <a href="Login.jsp" style="float:right"><button class="btn btn-info navbar-btn">Login</button></a>
   </div>
-  </div>
+  
 </nav>
+		<jsp:include page="Footer.jsp"></jsp:include>
   </body>
+  
+  
 </html>
