@@ -22,7 +22,16 @@ public class EditServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		 response.setContentType("text/html");  
-	        PrintWriter out=response.getWriter();  
+	        PrintWriter out=response.getWriter();
+	        out.println("<html>");
+	        out.println("<head>");
+	        out.println("<title>More|ProductsList</title>");
+
+	        out.println("<link rel='stylesheet' type='text/css' href='" + request.getContextPath() +"/css/table.css' />");
+	         
+	        out.println("</head>");
+	        out.println("<body background='pics/nature1.jpg'>");
+	        
 	        out.println("<h1>Update Employee</h1>");  
 	        String id=request.getParameter("ProductId");
 	        
@@ -41,7 +50,9 @@ public class EditServlet extends HttpServlet {
 	        out.print("<tr><td colspan='2'><input type='submit' value='Edit & Save '/></td></tr>");  
 	        out.print("</table>");  
 	        out.print("</form>");  
-	          
+	         
+	        out.print("</body>");
+	        out.print("</html>");
 	        out.close();  
 	    }  
 

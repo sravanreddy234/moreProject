@@ -34,8 +34,8 @@
     </ul>
     
     
-    
-    <a href="Home.jsp" style="float:right"><button class="btn btn-info navbar-btn">Logout</button></a>
+    <a href="SignUp.jsp" style="float:right"><button class="btn btn-danger navbar-btn">SignUp</button></a>
+    <a href="Login.jsp" style="float:right"><button class="btn btn-info navbar-btn">Login</button></a>
   </div>
   </div>
 </nav>

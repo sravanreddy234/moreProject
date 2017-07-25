@@ -63,7 +63,7 @@ public class SignUpServlet extends HttpServlet {
 		 * request.getRequestDispatcher("index.html").include(request, response); }else{
 		 * pw.println("Sorry! unable to save record"); }
 		 */
-		response.sendRedirect("hello.html");
+		response.sendRedirect("Home.jsp");
 		pw.close();
 	}
 
