@@ -20,7 +20,7 @@ public class ViewServlet extends HttpServlet {
                throws ServletException, IOException {  
         response.setContentType("text/html");  
         PrintWriter out=response.getWriter();  
-        out.println("<a href='AddProduct.html'>Add Products</a>");  
+        out.println("<a href='AddProduct.jsp'>Add Products</a>");  
         out.println("<h1>Product List</h1>");  
           
         List<Product> list=CrudDAO.getAllProducts();

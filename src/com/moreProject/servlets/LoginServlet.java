@@ -32,14 +32,14 @@ public class LoginServlet extends HttpServlet {
 		if (LoginDAO.validate(n, p)) {
 			System.out.println("valid user");
 			if (LoginDAO.role(n)) {
-				RequestDispatcher rd = request.getRequestDispatcher("Admin.html");
+				RequestDispatcher rd = request.getRequestDispatcher("Admin.jsp");
 				rd.forward(request, response);
 				System.out.println("admin logged in");
 				out.println("admin logged in: "+n);
 				out.println("<alert>welcome : "+LoginDAO.userName(n)+"</alert>");
 				System.out.println("Welcome:"+LoginDAO.userName(n));
 			} else {
-				RequestDispatcher rd = request.getRequestDispatcher("ViewProducts.html");
+				RequestDispatcher rd = request.getRequestDispatcher("ViewProducts.jsp");
 				rd.include(request, response);
 				System.out.println("Employee logged in");
 				out.println("Employee logged in: "+n);
@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet {
 			}
 		} else {
 			out.println("Invalid Credentials");
-			RequestDispatcher rd = request.getRequestDispatcher("Home.html");
+			RequestDispatcher rd = request.getRequestDispatcher("Home.jsp");
 			rd.include(request, response);
 			System.out.println("Invalid Credentials");
 			out.println("Invalid Credentials");
