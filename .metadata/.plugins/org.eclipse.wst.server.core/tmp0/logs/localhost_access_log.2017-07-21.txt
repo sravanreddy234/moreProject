@@ -1,0 +1,7 @@
+127.0.0.1 - - [21/Jul/2017:17:23:20 +0530] "GET / HTTP/1.1" 404 998
+0:0:0:0:0:0:0:1 - - [21/Jul/2017:17:23:22 +0530] "GET /moreProject/ HTTP/1.1" 200 387
+0:0:0:0:0:0:0:1 - - [21/Jul/2017:17:23:25 +0530] "GET /moreProject/Login.html HTTP/1.1" 200 335
+0:0:0:0:0:0:0:1 - - [21/Jul/2017:17:23:33 +0530] "POST /moreProject/LoginServlet HTTP/1.1" 200 408
+0:0:0:0:0:0:0:1 - - [21/Jul/2017:17:23:46 +0530] "POST /moreProject/LoginServlet HTTP/1.1" 200 15
+0:0:0:0:0:0:0:1 - - [21/Jul/2017:17:27:57 +0530] "POST /moreProject/LoginServlet HTTP/1.1" 200 15
+0:0:0:0:0:0:0:1 - - [21/Jul/2017:17:42:52 +0530] "POST /moreProject/LoginServlet HTTP/1.1" 200 15
