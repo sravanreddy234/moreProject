@@ -14,7 +14,7 @@
 
 
 </head>
-<body style="height:1500px" background="pics/nature1.jpg">
+<body style="height:1500px" background="pics/nature2.jpg">
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
@@ -28,9 +28,9 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="Home.jsp">Home</a></li>
-      <li><a href="#">AboutUs</a></li>
-      <li><a href="#">Address</a></li>
-      <li><a href="#">ContactUs</a></li>
+      <li><a href="AboutUs.jsp">AboutUs</a></li>
+      <li><a href="Address.jsp">Address</a></li>
+      <li><a href="ContactUs.jsp">ContactUs</a></li>
     </ul>
     
     
