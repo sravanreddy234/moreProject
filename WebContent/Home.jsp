@@ -28,14 +28,26 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="Home.jsp">Home</a></li>
-      <li><a href="#">AboutUs</a></li>
-      <li><a href="#">Address</a></li>
-      <li><a href="#">ContactUs</a></li>
+      <li><a href="AboutUs.jsp">AboutUs</a></li>
+      <li><a href="Address.jsp">Address</a></li>
+      <li><a href="ContactUs.jsp">ContactUs</a></li>
     </ul>
     
     
     <a href="SignUp.jsp" style="float:right"><button class="btn btn-danger navbar-btn">SignUp</button></a>
     <a href="Login.jsp" style="float:right"><button class="btn btn-info navbar-btn">Login</button></a>
+ 
+ <%-- <%
+ 	String uid =request.getParameter((String) session.getAttribute("UserId"));        
+        //redirect user to login page if not logged in
+        if(uid==null){
+            response.sendRedirect("Home.jsp");
+        }
+        %>
+    
+        <p>Welcome <%=uid%></p>    
+        <a href="LogoutServlet">Logout</a> --%>
+ 
   </div>
   
 </nav>
