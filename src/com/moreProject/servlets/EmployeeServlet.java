@@ -36,7 +36,7 @@ public class EmployeeServlet extends HttpServlet {
 	        out.print("<table border='1' width='100%'");  
 	        out.print("<tr><th>ProductId</th><th>ProductName</th><th>ProductDesc</th><th>Price</th><th>Add to Cart</th></tr>");  
 	        for(Product pd:list){  
-	        	out.print("<tr><td>"+pd.getProductId()+"</td><td>"+pd.getProductName()+"</td><td>"+pd.getProductDesc()+"</td><td>"+pd.getPrice()+"</td><td><a href='Cart.jsp'>edit</a></td></tr>");  
+	        	out.print("<tr><td>"+pd.getProductId()+"</td><td>"+pd.getProductName()+"</td><td>"+pd.getProductDesc()+"</td><td>"+pd.getPrice()+"</td><td><a href='AddCartServlet?ProductId'>Add to Cart</a></td></tr>");  
 	        
 	        
 	        }  

@@ -2,9 +2,6 @@ package com.moreProject.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,8 +9,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import com.moreProject.db.DataBase;
 import com.moreProject.db.LoginDAO;
 
 @WebServlet("/LoginServlet")
@@ -28,10 +25,12 @@ public class LoginServlet extends HttpServlet {
 
 		String n = request.getParameter("UserId");
 		String p = request.getParameter("Password");
-
 		if (LoginDAO.validate(n, p)) {
 			System.out.println("valid user");
+			HttpSession session = request.getSession();
+			session.setAttribute("UserId", n);
 			if (LoginDAO.role(n)) {
+				session.setAttribute("role", "admin");
 				RequestDispatcher rd = request.getRequestDispatcher("Admin.jsp");
 				rd.forward(request, response);
 				System.out.println("admin logged in");

@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.moreProject.bean.Product;
 import com.moreProject.db.CrudDAO;  
@@ -21,7 +22,11 @@ public class ViewServlet extends HttpServlet {
         response.setContentType("text/html");  
         PrintWriter out=response.getWriter();
         //request.getRequestDispatcher("Header.jsp").include(request, response);
-
+        HttpSession session = request.getSession(false);
+        String s1=(String) session.getAttribute("UserId");
+        String s2= (String) session.getAttribute("role");
+        System.out.println("Session UserId :"+s1);
+        System.out.println("session role :"+s2);
         out.println("<html>");
         out.println("<head>");
         out.println("<title>More|ProductsList</title>");
