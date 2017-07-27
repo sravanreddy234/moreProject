@@ -22,12 +22,13 @@ public class LoginServlet extends HttpServlet {
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-
+		HttpSession session=null;
 		String n = request.getParameter("UserId");
 		String p = request.getParameter("Password");
+		System.out.println("In Login Servlet");
 		if (LoginDAO.validate(n, p)) {
 			System.out.println("valid user");
-			HttpSession session = request.getSession();
+			session = request.getSession(false);
 			session.setAttribute("UserId", n);
 			if (LoginDAO.role(n)) {
 				session.setAttribute("role", "admin");
@@ -39,10 +40,14 @@ public class LoginServlet extends HttpServlet {
 				System.out.println("Welcome:"+LoginDAO.userName(n));
 			} else {
 				RequestDispatcher rd = request.getRequestDispatcher("EmployeeServlet");
-				rd.include(request, response);
+				/*session = request.getSession();
+				session.setAttribute("User", n);*/
+				String str=(String) session.getAttribute("UserId");
+				System.out.println("UserId From Session in Login Servlet"+str);
+				out.println("<alert>welcome : "+LoginDAO.userName(n)+"</alert>");
 				System.out.println("Employee logged in");
 				out.println("Employee logged in: "+n);
-
+				rd.include(request, response);
 			}
 		} else {
 			out.println("Invalid Credentials");

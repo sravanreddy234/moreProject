@@ -14,7 +14,7 @@
 
 
 </head>
-<body style="height:1500px" background="pics/nature2.jpg">
+<body style="height:1500px" background="pics/nature1.jpg">
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
@@ -36,6 +36,18 @@
     
     <a href="SignUp.jsp" style="float:right"><button class="btn btn-danger navbar-btn">SignUp</button></a>
     <a href="Login.jsp" style="float:right"><button class="btn btn-info navbar-btn">Login</button></a>
+ 
+ <%-- <%
+ 	String uid =request.getParameter((String) session.getAttribute("UserId"));        
+        //redirect user to login page if not logged in
+        if(uid==null){
+            response.sendRedirect("Home.jsp");
+        }
+        %>
+    
+        <p>Welcome <%=uid%></p>    
+        <a href="LogoutServlet">Logout</a> --%>
+ 
   </div>
   
 </nav>

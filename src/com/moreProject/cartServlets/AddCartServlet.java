@@ -24,12 +24,12 @@ public class AddCartServlet extends HttpServlet {
 	
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(false);
 		String pid= request.getParameter("ProductId");
-		String uid =request.getParameter((String) session.getAttribute("UserId"));
-		
+		String uid =(String) session.getAttribute("UserId");
+	
 		//int quantity=Integer.parseInt(request.getParameter("quantity"));
-		
+		System.out.println(uid);
 		
 		System.out.println("in add to cart servlet");
 		
@@ -45,7 +45,7 @@ public class AddCartServlet extends HttpServlet {
 		boolean status=false;
 		status=CartDAO.addCart(pid, uid);
 		RequestDispatcher rd=null;
-		rd=request.getRequestDispatcher("EmployeeServlet");
+		rd=request.getRequestDispatcher("ViewCartServlet");
 		
 		rd.include(request, response);
 		
