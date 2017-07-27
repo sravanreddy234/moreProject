@@ -47,3 +47,8 @@ input[type=submit] {
 	font-family:goudy old style;
 
 }
+body{
+	
+	 position: relative;
+  padding: 110px 350px 28px 45px;
+}

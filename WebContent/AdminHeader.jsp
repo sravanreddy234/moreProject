@@ -34,7 +34,7 @@
     </ul>
     
     
-    <a href="ViewCartServlet" style="float:right"><button class="btn btn-info navbar-btn">Cart</button></a>
+    
     <a href="Home.jsp" style="float:right"><button class="btn btn-info navbar-btn">Logout</button></a>
   </div>
  

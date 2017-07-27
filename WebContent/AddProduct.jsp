@@ -49,6 +49,7 @@
 <html>
 <head>
 <title>MoreStore|AddProduct</title>
+<%-- <%@include file="AdminHeader.jsp"%> --%>
 </head>
 <style>
 form {
@@ -111,7 +112,7 @@ span.psw {
 }
 </style>
 <body background="pics/nature1.jpg">
-
+<%@include file="AdminHeader.jsp"%>
 <h2>Add Product Page</h2>
 
 <form action="AddServlet" method="POST">

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="resources/css/Footer-white.css">
+    <link rel="stylesheet" href="css/Footer-white.css">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
 </div>
     <footer id="myFooter">
         <div class="container">
-        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p class="pull-right"><a href="#"><button type="button" class="btn btn-primary">BacktoTop</button></a></p>
             <ul>
                 
                 <li><a href="about">About us</a></li>

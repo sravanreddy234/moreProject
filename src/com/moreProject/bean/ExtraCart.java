@@ -6,17 +6,21 @@ public class ExtraCart {
 	private Double Price;
 	private int quantity;
 	private String ProDesc;
-	private Double Total;
+	private String proId;
 	
 	
-	
-	
+	public String getProId() {
+		return proId;
+	}
+
+	public void setProId(String proId) {
+		this.proId = proId;
+	}
+
 	public Double getTotal() {
-		return Total;
+		return Price*quantity;
 	}
-	public void setTotal(Double total) {
-		Total = Price*quantity;
-	}
+	
 	public String getProDesc() {
 		return ProDesc;
 	}

@@ -4,17 +4,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>MoreStore|AdminPage</title>
+<title>MoreStore|Employee Page</title>
+<%@include file="Header.jsp"%>
 <link rel="stylesheet" href="css/form.css">
-<%@include file="AdminHeader.jsp"%>
 </head>
-<body background="pics/nature1.jpg">
-	<h1>Welcome Admin</h1>
+<body background="pics/nature1.jpg" id="body">
+	<h1>Welcome Employee</h1>
 
 	<a href="Home.jsp"><input type="submit" value="Logout"></a>
 
 
-	<a href="ViewServlet"><input type="submit" value="viewProducts"></a>
+	<a href="EmployeeServlet"><input type="submit" value="viewProducts"></a>
 
 
 

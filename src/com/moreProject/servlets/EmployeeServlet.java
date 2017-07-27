@@ -19,7 +19,7 @@ public class EmployeeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 response.setContentType("text/html");  
 	        PrintWriter out=response.getWriter(); 
 	        HttpSession session = request.getSession(false);
@@ -30,9 +30,9 @@ public class EmployeeServlet extends HttpServlet {
 	        out.println("<title>More|ProductsList</title>");
 
 	        out.println("<link rel='stylesheet' type='text/css' href='" + request.getContextPath() +"/css/table.css' />");
-	         
+	        request.getRequestDispatcher("Header.jsp").include(request, response);
 	        out.println("</head>");
-	        out.println("<body background='pics/nature1.jpg'>"); 
+	        out.println("<body background='pics/nature1.jpg' id='body'>"); 
 	        out.println("<h1>Product List</h1>");  
 	          
 	        List<Product> list=CrudDAO.getAllProducts();

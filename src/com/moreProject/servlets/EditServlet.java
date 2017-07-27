@@ -28,9 +28,9 @@ public class EditServlet extends HttpServlet {
 	        out.println("<title>More|ProductsList</title>");
 
 	        out.println("<link rel='stylesheet' type='text/css' href='" + request.getContextPath() +"/css/table.css' />");
-	         
+	        request.getRequestDispatcher("AdminHeader.jsp").include(request, response);
 	        out.println("</head>");
-	        out.println("<body background='pics/nature1.jpg'>");
+	        out.println("<body background='pics/nature1.jpg' id='body'>");
 	        
 	        out.println("<h1>Update Employee</h1>");  
 	        String id=request.getParameter("ProductId");

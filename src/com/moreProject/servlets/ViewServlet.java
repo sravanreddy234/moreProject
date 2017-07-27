@@ -30,7 +30,7 @@ public class ViewServlet extends HttpServlet {
         out.println("<html>");
         out.println("<head>");
         out.println("<title>More|ProductsList</title>");
-
+        request.getRequestDispatcher("AdminHeader.jsp").include(request, response);
         out.println("<link rel='stylesheet' type='text/css' href='" + request.getContextPath() +"/css/table.css' />");
          
         out.println("</head>");
