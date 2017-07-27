@@ -45,7 +45,7 @@ public class AddCartServlet extends HttpServlet {
 		boolean status=false;
 		status=CartDAO.addCart(pid, uid);
 		RequestDispatcher rd=null;
-		rd=request.getRequestDispatcher("EmployeeServlet");
+		rd=request.getRequestDispatcher("ViewCartServlet");
 		
 		rd.include(request, response);
 		

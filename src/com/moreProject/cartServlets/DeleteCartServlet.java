@@ -13,12 +13,15 @@ import javax.servlet.http.HttpSession;
 import com.moreProject.db.CartDAO;
 import com.moreProject.db.CrudDAO;
 
+import com.moreProject.db.CrudDAO;
+
 @WebServlet("/DeleteCartServlet")
 public class DeleteCartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+<<<<<<< HEAD
 		  
         
 		response.setContentType("text/html");
@@ -29,6 +32,11 @@ public class DeleteCartServlet extends HttpServlet {
 		
 		
         CartDAO.delete(pid, uid);
+=======
+		String pid=request.getParameter("ProductId");  
+        //int id=Integer.parseInt(sid);  
+       CrudDAO.delete(pid); 
+>>>>>>> origin/master
         response.sendRedirect("ViewCartServlet");  
     }  
 

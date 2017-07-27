@@ -39,7 +39,11 @@ public class LoginServlet extends HttpServlet {
 				out.println("<alert>welcome : "+LoginDAO.userName(n)+"</alert>");
 				System.out.println("Welcome:"+LoginDAO.userName(n));
 			} else {
+<<<<<<< HEAD
 				RequestDispatcher rd = request.getRequestDispatcher("Employee.jsp");
+=======
+				RequestDispatcher rd = request.getRequestDispatcher("EmployeeServlet");
+>>>>>>> origin/master
 				/*session = request.getSession();
 				session.setAttribute("User", n);*/
 				String str=(String) session.getAttribute("UserId");

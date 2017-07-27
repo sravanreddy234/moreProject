@@ -34,7 +34,11 @@ public class ViewCartServlet extends HttpServlet {
         out.println("<title>MoreStore|Cart</title>");
 
         out.println("<link rel='stylesheet' type='text/css' href='" + request.getContextPath() +"/css/table.css' />");
+<<<<<<< HEAD
         request.getRequestDispatcher("Header.jsp").include(request, response);
+=======
+         
+>>>>>>> origin/master
         out.println("</head>");
         out.println("<body background='pics/nature1.jpg'>");
         out.println("<h1>Cart List</h1>");  
@@ -46,12 +50,17 @@ public class ViewCartServlet extends HttpServlet {
         
         /*List<Product> list=CartDAO.getProductById(pid);
         List<Cart> list1 = CartDAO.getCartById(uid);*/
+<<<<<<< HEAD
         //List<Product> pd=CartDAO.getProductById(pid);
+=======
+        Product pd=CartDAO.getProductById(pid);
+>>>>>>> origin/master
         List<ExtraCart> list = CartDAO.getAllCartProducts(uid);
         
         out.print("<table >");  
         out.print("<tr><th>ProductId</th><th>ProductName</th><th>ProductDesc</th><th>Price</th><th>Quantity</th><th>Total</th><th>Remove</th></tr>");  
           for(ExtraCart ec:list) {
+<<<<<<< HEAD
         	out.print("<tr><td>"+ec.getProId()+"</td><td>"+ec.getName()+"</td><td>"+ec.getProDesc()+"</td><td>"+ec.getPrice()+"</td><td>"+ec.getQuantity()+"</td><td>"+ec.getTotal()+"</td><td><a href='DeleteCartServlet?ProductId="+ec.getProId()+"'>delete</a></td></tr>");          
         
           }
@@ -60,6 +69,12 @@ public class ViewCartServlet extends HttpServlet {
           
         out.print("</table>"); 
         out.println("<a href='CheckOutServlet'><input type='button' value='CheckOut'></a>");
+=======
+        	out.print("<tr><td>"+pd.getProductId()+"</td><td>"+ec.getName()+"</td><td>"+ec.getProDesc()+"</td><td>"+ec.getPrice()+"</td><td>"+ec.getQuantity()+"</td><td>"+ec.getTotal()+"</td><td><a href='DeleteCartServlet?ProductId="+pd.getProductId()+"'>delete</a></td></tr>");          
+        
+          }
+        out.print("</table>"); 
+>>>>>>> origin/master
         out.print("</body>");
         out.print("</html>");
         //request.getRequestDispatcher("Footer.jsp").include(request, response);

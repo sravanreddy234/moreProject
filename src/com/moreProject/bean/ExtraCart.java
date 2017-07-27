@@ -6,6 +6,7 @@ public class ExtraCart {
 	private Double Price;
 	private int quantity;
 	private String ProDesc;
+<<<<<<< HEAD
 	private String proId;
 	
 	
@@ -21,6 +22,19 @@ public class ExtraCart {
 		return Price*quantity;
 	}
 	
+=======
+	private Double Total;
+	
+	
+	
+	
+	public Double getTotal() {
+		return Total;
+	}
+	public void setTotal(Double total) {
+		Total = Price*quantity;
+	}
+>>>>>>> origin/master
 	public String getProDesc() {
 		return ProDesc;
 	}
